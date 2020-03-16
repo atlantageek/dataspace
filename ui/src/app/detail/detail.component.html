@@ -1,0 +1,20 @@
+
+<mat-sidenav-container class="example-container" autosize style="height:100%;">
+    <mat-sidenav mode="side" opened>
+        <span *ngFor="let country of countryList; index as i">
+            <a routerLink="/detail/{{country.id}}" routerLinkActive="active">{{country.name}}</a>
+            <br>
+        </span>
+
+    </mat-sidenav>
+    <mat-sidenav-content><h2>{{name}}</h2>
+        <b>Population:</b> {{population}}
+        <b>Longitude:</b> {{longitude}}
+        <b>Latitude:</b> {{latitude}}
+        <p></p>
+            <app-globe [longitude]="longitude" [latitude]="latitude"></app-globe>
+     
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
